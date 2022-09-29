@@ -1,0 +1,30 @@
+from random import *
+import logging
+
+# logging.basicConfig(level=logging.DEBUG, filename='liczbylol.log') 
+
+r = randrange(1, 11)
+
+
+print("Zgadnij numer pomiędzy 1 a 10. Masz 5 prób.")
+
+
+licznik_prób = 0
+# logging.info("The range of the numbers is 1 to (including) 10.")
+
+while licznik_prób < 5:
+    próba_gracza = int(input("Podaj liczbę: "))
+    if próba_gracza == r:
+        print("Brawo! Wygrałeś!")
+        break
+        # logging.debug("Czyżby wygrana?")
+    elif licznik_prób == 3:
+        print("Ostatnia próba!")
+        licznik_prób += 1
+    else:
+        print("Nie zgadłeś.")
+        licznik_prób += 1
+        # logging.warning("Czyżby pudło?")
+
+if licznik_prób == 5:
+    print("Przegrałeś :(")
