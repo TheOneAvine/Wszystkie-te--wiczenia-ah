@@ -1,0 +1,26 @@
+znaczek = "♣"
+ilość_znaczków = int(input("Podaj szerokość wzoru: "))
+ile_razy = int(input("Ile razy ma się powtórzyć wzór? "))
+
+if ilość_znaczków > 101:
+    print("Maksymalna szerokość wzoru wynosi 100.")
+    ilość_znaczków = int(input("Podaj szerokość wzoru: "))
+else:
+    pierwotne_znaczki = ilość_znaczków
+
+    if ilość_znaczków < 3:
+        print(znaczek * ilość_znaczków)
+
+    else:
+        for i in range(ile_razy):
+            while ilość_znaczków > 2:
+                txt = str(znaczek * ilość_znaczków)
+                x = txt.center(100)
+                print(x)
+                ilość_znaczków -= 2
+            while ilość_znaczków < pierwotne_znaczki:
+                txt = str(znaczek * ilość_znaczków)
+                x = txt.center(100)
+                print(x)
+                ilość_znaczków += 2
+
